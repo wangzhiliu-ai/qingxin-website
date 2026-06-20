@@ -1,5 +1,5 @@
-export const phoneDisplay = '400-839-8718'
-export const phoneHref = 'tel:4008398718'
+export const phoneDisplay = '195-3388-3188'
+export const phoneHref = 'tel:19533883188'
 
 export const safeguards = [
   { icon: 'badge', title: '人员资质核验', text: '按平台准入规范核验服务人员身份与相关从业材料，建立可追溯档案。' },
