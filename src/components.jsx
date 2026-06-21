@@ -24,7 +24,7 @@ export function Icon({ name, size = 24 }) {
   return <svg {...common}>{paths[name] || paths.spark}</svg>
 }
 
-const nav = [['/', '首页'], ['/hotel', '酒店合作'], ['/safety', '安全保障'], ['/services', '服务体系'], ['/about', '关于我们']]
+const nav = [['/', '首页'], ['/hotel', '酒店合作'], ['/city-partner', '城市代理'], ['/safety', '安全保障'], ['/services', '服务体系'], ['/about', '关于我们']]
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -67,14 +67,14 @@ function BackTop() {
   return <button className={`back-top ${show?'show':''}`} onClick={()=>window.scrollTo({top:0,behavior:'smooth'})} aria-label="返回顶部">↑</button>
 }
 
-export function PageHero({ eyebrow, title, lead, image, children }) {
-  return <section className="page-hero"><div className="container page-hero-grid"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{lead}</p>{children}</div>{image && <div className="page-hero-image"><img src={image} alt="" /></div>}</div></section>
+export function PageHero({ eyebrow, title, lead, image, imageAlt='', children }) {
+  return <section className="page-hero"><div className="container page-hero-grid"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{lead}</p>{children}</div>{image && <div className="page-hero-image"><img src={image} alt={imageAlt} /></div>}</div></section>
 }
 
 export function SectionTitle({ eyebrow, title, desc, align='left' }) {
   return <div className={`section-title ${align}`}><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{desc && <p>{desc}</p>}</div>
 }
 
-export function CTA({ title='为酒店，多一种安心的服务选择', text='欢迎来电沟通酒店场景与合作需求，我们将结合实际情况提供合作建议。' }) {
-  return <section className="cta"><div className="container cta-inner"><div><span className="eyebrow light">HOTEL PARTNERSHIP</span><h2>{title}</h2><p>{text}</p></div><a href={phoneHref} className="btn btn-light" data-track="cta-phone"><Icon name="phone" size={19}/>致电 {phoneDisplay}</a></div></section>
+export function CTA({ title='为酒店，多一种安心的服务选择', text='欢迎来电沟通酒店场景与合作需求，我们将结合实际情况提供合作建议。', eyebrow='HOTEL PARTNERSHIP' }) {
+  return <section className="cta"><div className="container cta-inner"><div><span className="eyebrow light">{eyebrow}</span><h2>{title}</h2><p>{text}</p></div><a href={phoneHref} className="btn btn-light" data-track="cta-phone"><Icon name="phone" size={19}/>致电 {phoneDisplay}</a></div></section>
 }
