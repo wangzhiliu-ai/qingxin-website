@@ -47,7 +47,7 @@ export function Header() {
 export function Footer() {
   return <footer className="footer">
     <div className="container footer-grid">
-      <div><div className="footer-brand">倾心有约</div><p>正规、专业、有温度的健康服务平台。<br/>让每一次相约，都值得信赖。</p></div>
+      <div><div className="footer-brand">倾心有约</div><p>正规、专业、有温度的健康服务平台。<br/>让每一次相约，都值得信赖。</p><div className="footer-qr"><img src={asset('platform-qrcode.jpg')} alt="倾心有约平台二维码" loading="lazy"/><span>微信扫码进入平台</span></div></div>
       <div><h3>网站导航</h3><div className="footer-links">{nav.slice(1).map(([to,l]) => <Link key={to} to={to}>{l}</Link>)}</div></div>
       <div><h3>合作咨询</h3><a className="footer-phone" href={phoneHref}><Icon name="phone" size={20}/>{phoneDisplay}</a><p>服务城市：成都 · 重庆 · 昆明 · 贵阳</p></div>
     </div>
